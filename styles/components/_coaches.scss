@@ -1,0 +1,75 @@
+.coaches {
+  background-color: $thirtColor;
+  color: white;
+  &__content {
+    margin-top: 60px;
+    @include grid(2);
+    &-item {
+      height: 400px;
+      @include flex(none, none);
+      &-img {
+        height: 100%;
+        flex-basis: 40%;
+        img {
+          width: 100%;
+          height: 100%;
+          object-fit: cover;
+          filter: grayscale(50%);
+          transition: filter 250ms linear;
+          &:hover {
+            filter: grayscale(0);
+            transition: filter 250ms linear;
+          }
+        }
+      }
+      &-info {
+        flex-basis: 60%;
+        padding: 15px 30px;
+        background-color: $fourColor;
+        @include flex(none, center);
+        flex-direction: column;
+        &-title {
+          font-size: 1.4rem;
+          font-weight: 700;
+        }
+        &-details {
+          font-size: 0.8rem;
+          color: $mainColor;
+          font-weight: 700;
+          margin: 10px 0;
+        }
+        &-desc {
+          line-height: 2;
+        }
+      }
+    }
+    @media (max-width: 768px) {
+      @include grid(1);
+      &-item {
+        display: flex;
+        height: auto;
+        flex-direction: column;
+        &-img {
+          flex-basis: 100%;
+        }
+        &-info {
+          flex-basis: 100%;
+        }
+      }
+    }
+    @media (max-width: 640px) {
+      @include grid(1);
+      &-item {
+        &-info {
+          &-title {
+            font-size: 1.2rem;
+          }
+          &-desc {
+            line-height: 2;
+            font-size: 14px;
+          }
+        }
+      }
+    }
+  }
+}

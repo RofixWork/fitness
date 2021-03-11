@@ -1,0 +1,59 @@
+.programs {
+  background-color: $fourColor;
+
+  .programs__content {
+    @include grid(4);
+    margin-top: 60px;
+
+    &-item {
+      @include image();
+      background-color: $fourColor;
+      color: white;
+      height: 500px;
+      padding: 15px 30px;
+      @include flex(center, space-between);
+      flex-direction: column;
+      transition: border 250ms linear;
+      &:hover {
+        border-top: 4px solid $mainColor;
+        transition: border 250ms linear;
+      }
+      .program__title {
+        h2 {
+          font-size: 2rem;
+          font-weight: 600;
+          text-align: center;
+        }
+      }
+      .btn__details {
+        button {
+          padding: 12px 30px;
+          border: 2px solid $subColor;
+          color: $subColor;
+          background-color: transparent;
+          cursor: pointer;
+          font-size: 14px;
+          font-weight: 600;
+          transition: all 250ms ease;
+          &:hover {
+            background-color: $subColor;
+            color: $thirtColor;
+            border: 2px solid $thirtColor;
+            transition: all 250ms ease;
+          }
+        }
+      }
+    }
+    @media (max-width: 991px) {
+      @include grid(2);
+      .program__title {
+        h2 {
+          font-size: 1.2rem;
+        }
+      }
+    }
+    @media (max-width: 640px) {
+      @include grid(1);
+    }
+  }
+}
